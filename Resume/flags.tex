@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%FLAGS
+% Online vs non online
+% Tell whether or not to add links
+\def\online{1}
+% Tell if long form
+\def\cv{0}
+% Tell if short form
+\def\onepage{0}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Change Spacing If Long Form 
+\if\cv1
+
+% vertical space after personal info and standard CV items
+\setlength{\cvafteritemskipamount}{3mm plus 1.25mm minus 1.25mm}
+
+% vertical space after sections
+\setlength{\cvaftersectionskipamount}{3mm plus 0.5mm minus 0.5mm}
+
+% extra vertical space to be used when a section starts with an item with a heading (e.g. in the skills section),
+% so that the heading does not follow the section name too closely
+\setlength{\cvbetweensectionandheadingextraskipamount}{2mm plus 0.25mm minus 0.25mm}
+\fi
+
+
+% Change Spacing If Short Form 
+\if\onepage1
+% remove header (page number)
+\rhead{}
+% Set new margins
+\newgeometry{left=10mm,right=10mm,top=10mm,bottom=10mm}
+% vertical space after personal info and standard CV items
+\setlength{\cvafteritemskipamount}{1.5mm plus 1.25mm minus 1.25mm}
+
+% vertical space after sections
+\setlength{\cvaftersectionskipamount}{0.5mm plus 0.5mm minus 0.5mm}
+
+% extra vertical space to be used when a section starts with an item with a heading (e.g. in the skills section),
+% so that the heading does not follow the section name too closely
+\setlength{\cvbetweensectionandheadingextraskipamount}{1mm plus 0.25mm minus 0.25mm}
+\fi
+
+
+\if\online1
+% Link Colors
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  urlcolor=gray!70!black
+}
+\fi
